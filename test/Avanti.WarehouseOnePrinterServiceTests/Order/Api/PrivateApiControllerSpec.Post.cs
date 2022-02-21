@@ -55,7 +55,7 @@ namespace Avanti.WarehouseOnePrinterServiceTests.Order.Api
             public async void Should_Return_500_When_Failed_To_Store()
             {
                 progPrinterActor.SetResponseForRequest<PrinterActor.ExecuteJob>(request =>
-                    new Failure());
+                    new Status.Failure(new InvalidOperationException("error!")));
 
                 IActionResult result = await Subject.PostOrder(request);
 
