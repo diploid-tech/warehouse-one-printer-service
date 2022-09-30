@@ -24,8 +24,8 @@ main:
 environments:
   staging:
     fixedReplicaCount: 1
-    cpuRequest: 50m
-    cpuLimit: 150m
+    cpuRequest: 30m
+    cpuLimit: 100m
     memoryRequest: 128Mi
     memoryLimit: 160Mi
     vars:
