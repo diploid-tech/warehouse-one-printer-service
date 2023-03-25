@@ -1,10 +1,9 @@
-namespace Avanti.WarehouseOnePrinterService.Order
-{
-    public partial class PrinterActor
-    {
-        public interface IResponse { }
+namespace Avanti.WarehouseOnePrinterService.Order;
 
-        public class JobCompleted : IResponse
-        { }
-    }
+public partial class PrinterActor
+{
+    public interface IResponse { }
+
+    public class JobCompleted : IResponse
+    { }
 }

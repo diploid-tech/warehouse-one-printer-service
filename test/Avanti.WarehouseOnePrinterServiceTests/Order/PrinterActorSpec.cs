@@ -2,13 +2,12 @@ using Akka.Actor;
 using Avanti.Core.Unittests;
 using Avanti.WarehouseOnePrinterService.Order;
 
-namespace Avanti.WarehouseOnePrinterServiceTests.Order
+namespace Avanti.WarehouseOnePrinterServiceTests.Order;
+
+public partial class PrinterActorSpec : WithSubject<IActorRef>
 {
-    public partial class PrinterActorSpec : WithSubject<IActorRef>
+    private PrinterActorSpec()
     {
-        private PrinterActorSpec()
-        {
-            Subject = Sys.ActorOf(Props.Create<PrinterActor>());
-        }
+        Subject = Sys.ActorOf(Props.Create<PrinterActor>());
     }
 }

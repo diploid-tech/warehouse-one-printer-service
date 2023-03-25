@@ -1,14 +1,12 @@
-using Akka.Actor;
 using Avanti.Core.Microservice.Actors;
-using Avanti.Core.Microservice.AkkaSupport;
+using Avanti.Core.Microservice.Extensions;
 
-namespace Avanti.WarehouseOnePrinterService.Order
+namespace Avanti.WarehouseOnePrinterService.Order;
+
+public class PrinterActorProvider : BaseActorProvider<PrinterActor>
 {
-    public class PrinterActorProvider : BaseActorProvider<PrinterActor>
+    public PrinterActorProvider(ActorSystem actorSystem)
     {
-        public PrinterActorProvider(ActorSystem actorSystem)
-        {
-            this.ActorRef = actorSystem.ActorOfWithDI<PrinterActor>("printer-actor");
-        }
+        this.ActorRef = actorSystem.ActorOfWithDI<PrinterActor>("printer-actor");
     }
 }
